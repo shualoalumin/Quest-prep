@@ -1,6 +1,28 @@
-# AIFFEL Campus Online Code Peer Review Templete
-- 코더 : 
-- 리뷰어 : 
+완코구 (완성된 코드 구현)
+
+문제 해결 코드 작성
+주도작 (주석 및 Docstring 작성)
+
+핵심 코드 주석/Docstring
+기능 및 원리 설명
+디추기 (디버깅 및 추가 기록)
+
+에러 디버깅 기록
+추가 시도/실험 포함
+회고작 (회고 작성)
+
+배운 점 및 느낀 점 기록
+코드 흐름 그래프 첨부
+코간효 (코드 간결성과 효율성)
+
+PEP8 준수
+함수화/모듈화
+코드 중복 최소화
+
+
+
+
+
 
 
 # PRT(Peer Review Template)
