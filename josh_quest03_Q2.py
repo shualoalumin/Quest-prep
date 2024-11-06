@@ -2,11 +2,13 @@ def counter(func):
     count = 0  # 호출 횟수를 저장할 변수 count 초기화
 
     # 데코레이터 함수 정의 
-    '''(docstring)함수가 실행될 때 마다 함수 이름과 실행 횟수를 출력하는 데코레이터'''
-    def deco(*args, **kwargs): '''(docstring)중요! 키워드 인자 처리로 함수 재사용성 확보'''
+    """(docstring)중요! 키워드 인자 처리로 함수 재사용성 확보
+    (docstring)함수가 실행될 때 마다 함수 이름과 실행 횟수를 출력하는 데코레이터"""
+
+    def deco(*args, **kwargs): 
         nonlocal count  # 외부 변수 count를 참조
         count += 1  # 호출할 때마다 count 누적 증가
-        result = func(*args, **kwargs)
+        result = func(*args, **kwargs) 
         print(f"{func.__name__} 실행횟수: {count}") # 실행마다 함수 이름과 실행횟수 출력
         return result
 
@@ -19,8 +21,6 @@ def say_hello():
 
 for i in range(5):
     say_hello()
-
-
 
 '''
 * 디버깅 과정 : 
