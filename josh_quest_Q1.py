@@ -12,6 +12,8 @@ def find_min_max(numbers):
         if num > max_value:
             max_value = num
 
+        return min_value, max_value 
+    
     # numbers 리스트의 모든 값을 순환하며 최댓값과 최솟값 업데이트
     for num in numbers:
         update_min_max(num)
