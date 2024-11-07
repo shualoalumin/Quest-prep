@@ -26,7 +26,7 @@
             print("계산기를 종료합니다.")
             return
         else:
-              print("잘못된 입력입니다. y또는 n을 입력해주세요.")
+            print("잘못된 입력입니다. y또는 n을 입력해주세요.")
 
     if __name__ == "__main__":
         main()
