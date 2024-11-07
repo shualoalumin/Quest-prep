@@ -58,12 +58,12 @@ def calculator():
 
 while True:
     result = calculator()
-    if result is None:
-        print("계산기를 종료합니다.")
-        break
     continue_input = input("계속하시겠습니까? (y/n): ")
+    
     if continue_input not in ['y','n']:
         print("잘못된 입력입니다. y 또는 n을 입력해주세요.")
+        continue_input = input("계속하시겠습니까? (y/n): ").lower()
+    
     elif continue_input == 'n':
         print("계산기를 종료합니다.")
         break
