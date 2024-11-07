@@ -1,7 +1,11 @@
-a = 1
-b = 2
+# 연산자함수 테스트
 
-try:
-    print(a/b)
-except ZeroDivisionError:
-    print("0으로 나눌 수 없습니다")
+import math
+
+def operator_input():
+        operator = input("연산자를 입력하세요(+,-,*,/,**): ")
+        if operator in ['+','-','*','/','**']:
+            return operator
+
+        else:
+            print("지원하지 않는 연산자입니다.")
