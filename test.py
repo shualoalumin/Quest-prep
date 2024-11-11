@@ -22,3 +22,5 @@ class Dog(Animal):  # Animal 클래스를 상속
 my_dog = Dog("바둑이", "진돗개")
 my_dog.make_sound()  # 출력: 멍멍!
 my_dog.fetch()  # 출력: 바둑이이(가) 공을 가져옵니다
+
+ad
