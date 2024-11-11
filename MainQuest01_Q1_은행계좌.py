@@ -67,14 +67,14 @@ class Account:
                 print(f"{i}회: 입금\t금액: {money:,}\t잔액: {balance:,}")
                 
     def withdraw_history(self):
-        balance = self.balance + sum(self.withdraws)  # 출금 전의 잔액으로 시작
+        balance = self.balance + sum(self.withdraws)  
         for i, money in enumerate(self.withdraws, 1):
             balance -= money
             print(f"{i}회: 출금\t금액: {money:,}\t잔액: {balance:,}")
 
 
 
-# 실행 코드
+# 실행 테스트
 first_account = Account('차정은', 1000)
 second_account = Account('박광석', 30000000)
 third_account = Account('조웅제', 50000000)
@@ -85,8 +85,7 @@ account_list = [first_account, second_account, third_account]
 for a in account_list:
     if a.balance >= 1000000:
         a.display_info()
-        print()
-
+print()
 my_account = Account('차정은', 1000)
 for i in range(10):
     my_account.deposit(1000)
@@ -95,6 +94,8 @@ my_account.withdraw(3000000)
 my_account.withdraw(3000)
 
 print()
+print('<거래내역>')
+print('-' * 50)  
 my_account.deposit_history()
-print('-' * 50)  # 구분선 출력
+print('-' * 50)  
 my_account.withdraw_history()
