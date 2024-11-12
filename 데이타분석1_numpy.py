@@ -1,35 +1,32 @@
-import pandas as pd
-import numpy as np
+import seaborn as sns
 import matplotlib.pyplot as plt
 
-# Figure와 Axes 생성 (2행 1열)
-fig, axes = plt.subplots(2, 1, figsize=(8, 10))
+# 데이터 로드
+penguins = sns.load_dataset('penguins')
 
-# 샘플 데이터 생성
-data = pd.Series(np.random.rand(5), index=list('abcde'))
+# 경쾌한 색상 조합 설정
+palette = ['#FF69B4', '#00CED1', '#FFA500']  # 핫핑크, 터콰이즈, 주황
 
-# 수직 막대 그래프
-data.plot(
-    kind='bar', 
-    ax=axes[0],
-    color='blue',
-    alpha=0.7,
-    title='Vertical Bar Plot',
-    grid=True
-)
-axes[0].set_ylabel('Values')
+# 1. 종별 개체수 막대 그래프
+plt.figure(figsize=(10, 6))
+sns.countplot(data=penguins, x='species', palette=palette)
+plt.title('Number of Penguins by Species')
+plt.show()
 
-# 수평 막대 그래프
-data.plot(
-    kind='barh',
-    ax=axes[1],
-    color='red',
-    alpha=0.7,
-    title='Horizontal Bar Plot',
-    grid=True
-)
-axes[1].set_xlabel('Values')
+# 2. 바이올린 플롯
+fig, axes = plt.subplots(2, 2, figsize=(12, 10))
 
-# 레이아웃 조정
+sns.violinplot(data=penguins, x='species', y='bill_length_mm', ax=axes[0,0], palette=palette)
+sns.violinplot(data=penguins, x='species', y='bill_depth_mm', ax=axes[0,1], palette=palette)
+sns.violinplot(data=penguins, x='species', y='flipper_length_mm', ax=axes[1,0], palette=palette)
+sns.violinplot(data=penguins, x='species', y='body_mass_g', ax=axes[1,1], palette=palette)
+
 plt.tight_layout()
+plt.show()
+
+# 3. 산점도
+plt.figure(figsize=(10, 6))
+sns.scatterplot(data=penguins, x='bill_length_mm', y='bill_depth_mm', 
+                hue='species', palette=palette)
+plt.title('Bill Length vs Bill Depth by Species')
 plt.show()
